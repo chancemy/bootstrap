@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,CAAA;EACG,UAAU,EAAE,UAAU;CACzB;;AACD,AAAA,IAAI,CAAA;EACA,MAAM,EAAE,CAAC;CACZ;;AACD,AAAA,EAAE,CAAA;EACE,SAAS,EAAE,IAAI;CAClB;;AACD,AAAA,CAAC,CAAA;EACG,SAAS,EAAE,IAAI;CAClB",
+    "sources": [
+        "bootstrao.scss"
+    ],
+    "names": [],
+    "file": "bootstrao.css"
+}
