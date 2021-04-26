@@ -10,4 +10,48 @@ h1{
 p{
     font-size: 16px;
 }
+.block-frame{
+    margin: 96px 0px;
+}
+img{
+    width: 100%;
+}
+#custom-row{
+    padding: 0 4px 4px 4px;
+}
+.img-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    .circle-photo{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #e0e7ff;
+        color: #7a7ef4;
+        .pic-frame{
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+
+.B{
+    .container{
+        .row{
+            .col-sm-12{
+                p{
+                    text-align: center;
+                }
+                .blue-line{
+                    width: 64px;
+                    height: 4px;
+                    background-color: #6366F1;
+                }
+            }
+        }
+    }
+}
 
