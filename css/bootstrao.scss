@@ -19,6 +19,21 @@ img{
 #custom-row{
     padding: 0 4px 4px 4px;
 }
+.my-circle{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: #e0e7ff;
+    color: #7a7ef4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .pic-frame{
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
 .img-center{
     display: flex;
     justify-content: center;
@@ -37,6 +52,9 @@ img{
     }
 }
 
+.my-border{
+    color:  #e5e7eb ;
+}
 
 .B{
     .container{
