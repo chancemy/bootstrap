@@ -3,6 +3,7 @@
 }
 body{
     margin: 0;
+    
 }
 h1{
     font-size: 30px;
@@ -19,6 +20,9 @@ img{
 #custom-row{
     padding: 0 4px 4px 4px;
 }
+.my-font-size{
+    font-size: 1rem;
+}
 .my-circle{
     width: 8rem;
     height: 8rem;
@@ -32,6 +36,15 @@ img{
         width: 4rem;
         height: 4rem;
     }
+}
+.my-color-btn{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: royalblue;
+    border: none;
+    outline-width: 0rem;
+    
 }
 
 .img-center{
