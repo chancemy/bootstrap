@@ -9,6 +9,7 @@ body {
 
 h1 {
   font-size: 30px;
+  margin: 0px !important;
 }
 
 p {
@@ -25,6 +26,11 @@ img {
 
 #custom-row {
   padding: 0 4px 4px 4px;
+}
+
+button:focus {
+  outline: none !important;
+  outline: none  -webkit-focus-ring-color !important;
 }
 
 .my-font-size {
@@ -57,9 +63,6 @@ img {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: royalblue;
-  border: none;
-  outline-width: 0rem;
 }
 
 .img-center {
@@ -88,8 +91,26 @@ img {
   height: 40px;
 }
 
+textarea {
+  overflow: auto;
+  resize: none !important;
+}
+
+.my-mask {
+  position: relative;
+}
+
+.my-form-pos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .my-border {
   color: #e5e7eb;
+  z-index: 2;
 }
 
 .B .container .row .col-sm-12 p {
