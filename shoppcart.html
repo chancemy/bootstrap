@@ -17,7 +17,11 @@
       background-color: yellow;
       margin-bottom: 10px;
     }
-   
+    main{
+      width: 100%;
+      min-height: 100vh;
+      background-color: #d1d5db;
+    }
   </style>
 </head>
 
@@ -64,9 +68,53 @@
       </nav>
     </div>
   </nav>
-  <main>
 
+  <main>
+    <div class="cart-container">
+      <div class="title">
+        <h1>購物車</h1>
+      </div>
+      <div class="setup-group"></div>
+      <div class="details">
+        <h3>訂單明細</h3>
+        <div class="item">
+          <div class="item-photo"></div>
+          <div class="item-data">
+            <div class="item-name">Chicken momo</div>
+            <div class="item-nmuber">#41551</div>
+          </div>
+          <div class="item-quantiys">
+            <div class="quantiys">
+              <div class="bnt">-</div>
+              <div class="num-value"></div>
+              <div class="bnt">+</div>
+            </div>
+            <div class="price">$10.50</div>
+          </div>
+        </div>
+      </div>
+      <div class="total">
+        <div class="to-num">
+          <span>數量:</span>
+          <div class="value" id="to-num"></div>
+        </div>
+        <div class="items-price">
+          <span>小計:</span>
+          <div class="value" id="items-price"></div>
+        </div>
+        <div class="shipping">
+          <span>運費:</span>
+          <div class="value" id="shipping"></div>
+        </div>
+        <div class="to-price">
+          <span>總計:</span>
+          <div class="value" id="to-price"></div>
+        </div>
+      </div>
+      <div class="opctions"></div>
+    </div>
   </main>
+
   <footer>
     <div class="fat-footer" style="margin: 96px 0; padding: 16px 20px;">
       <div class="container">
