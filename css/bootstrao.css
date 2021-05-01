@@ -7,6 +7,17 @@ body {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+  padding: 1.25rem 0 0 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
 h1 {
   font-size: 30px;
   margin: 0px !important;
@@ -17,11 +28,25 @@ p {
 }
 
 .block-frame {
-  margin: 96px 0px;
+  margin-top: 96px;
 }
 
 img {
   width: 100%;
+}
+
+svg {
+  width: 40px;
+  height: 40px;
+}
+
+.svg-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.my-line-heigh {
+  line-height: 16px;
 }
 
 #custom-row {
@@ -96,8 +121,13 @@ textarea {
   resize: none !important;
 }
 
-.my-mask {
+.I {
   position: relative;
+}
+
+.my-mask {
+  -webkit-filter: grayscale(1) contrast(0.5) opacity(1);
+          filter: grayscale(1) contrast(0.5) opacity(1);
 }
 
 .my-form-pos {
