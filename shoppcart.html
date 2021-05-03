@@ -11,6 +11,14 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <title>Document</title>
   <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      margin: 0%;
+      min-height: calc(100vh - 419px);
+    }
+    
     .box {
       width: 100%;
       height: 200px;
@@ -21,6 +29,16 @@
       width: 100%;
       min-height: 100vh;
       background-color: #d1d5db;
+      padding: 5% 25%;
+    }
+    a:active{
+      color: black!important;
+    }
+
+    .cart-container{
+      padding: 5%;
+      border-radius: 10px;
+      background-color: #f3f4f6;
     }
   </style>
 </head>
@@ -111,7 +129,10 @@
           <div class="value" id="to-price"></div>
         </div>
       </div>
-      <div class="opctions"></div>
+      <div class="opctions">
+        <a href=""><i class="fas fa-arrow-left"></i><span>返回購物</span></a>
+        <button class="btn btn-primary" type="submit">下一步</button>
+      </div>
     </div>
   </main>
 
