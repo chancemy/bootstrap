@@ -11,34 +11,126 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <title>Document</title>
   <style>
-    *{
+    * {
       box-sizing: border-box;
     }
-    body{
+
+    body {
       margin: 0%;
       min-height: calc(100vh - 419px);
     }
-    
+
     .box {
       width: 100%;
       height: 200px;
       background-color: yellow;
       margin-bottom: 10px;
     }
-    main{
+
+    main {
       width: 100%;
       min-height: 100vh;
       background-color: #d1d5db;
-      padding: 5% 25%;
+      padding: 5% 10%;
+      transition: 0.1s;
     }
-    a:active{
-      color: black!important;
+    @media(max-width:1026px){
+      main{
+        padding: 5% 0px;
+      }
     }
 
-    .cart-container{
-      padding: 5%;
+    a:active {
+      color: black !important;
+    }
+
+    .cart-container {
+      max-width: 1140px;
+      margin: auto;
+      padding: 50px;
       border-radius: 10px;
       background-color: #f3f4f6;
+    }
+
+    .my-step {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .my-step-num {
+      width: 2rem;
+      height: 2rem;
+      margin: 0px 1rem;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+    }
+    .num{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .num1::before {
+      content: '';
+      width: calc(calc(100% - 4rem) / 2) ;
+      height: 0.5rem;
+      /* background-color: #e5e7eb; */
+    }
+    .num1::after {
+      content: '';
+      width: calc(calc(100% - 4rem) / 2) ;
+      height: 0.5rem;
+      background-color: #6ee7b7;
+    }
+    .num2::before {
+      content: '';
+      width: calc(calc(100% - 4rem) / 2) ;
+      height: 0.5rem;
+      background-color: #e5e7eb;
+    }
+    .num2::after {
+      content: '';
+      width: calc(calc(100% - 4rem) / 2) ;
+      height: 0.5rem;
+      background-color: #e5e7eb;
+    }
+    .num3::before {
+      content: '';
+      width: calc(calc(100% - 4rem) / 2) ;
+      height: 0.5rem;
+      background-color: #e5e7eb;
+    }
+    .num3::after {
+      content: '';
+      width: calc(calc(100% - 4rem) / 2) ;
+      height: 0.5rem;
+      background-color: #e5e7eb;
+    }
+    .num4::before {
+      content: '';
+      width: calc(calc(100% - 4rem) / 2) ;
+      height: 0.5rem;
+      background-color: #e5e7eb;
+    }
+    .num4::after {
+      content: '';
+      width: calc(calc(100% - 4rem) / 2) ;
+      height: 0.5rem;
+      /* background-color: #e5e7eb; */
+    }
+    .my-hr{
+      width: 100%;
+      height: 1px;
+      margin: 2rem 0;
+      background-color: gray;
+      opacity: 0.4;
     }
   </style>
 </head>
@@ -87,46 +179,165 @@
     </div>
   </nav>
 
-  <main>
+  <main >
     <div class="cart-container">
       <div class="title">
         <h1>購物車</h1>
       </div>
-      <div class="setup-group"></div>
-      <div class="details">
-        <h3>訂單明細</h3>
-        <div class="item">
-          <div class="item-photo"></div>
-          <div class="item-data">
-            <div class="item-name">Chicken momo</div>
-            <div class="item-nmuber">#41551</div>
-          </div>
-          <div class="item-quantiys">
-            <div class="quantiys">
-              <div class="bnt">-</div>
-              <div class="num-value"></div>
-              <div class="bnt">+</div>
+      <div class="setup-group">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="row no-gutters">
+                <div class="col-3">
+                  <div class="my-step">
+                    <div class="num1 num">
+                      <div class="my-step-num">1</div>
+                    </div>
+                    <span>確認購物車</span>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="my-step">
+                    <div class="num2 num">
+                      <div class="my-step-num ">2</div>
+                    </div>
+                    <span>付款與運送方式</span>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="my-step">
+                    <div class="num3 num">
+                      <div class="my-step-num ">3</div>
+                    </div>
+                    <span>填寫資料</span>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="my-step">
+                    <div class="num4 num">
+                      <div class="my-step-num">4</div>
+                    </div>
+                    <span>完成訂購</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="price">$10.50</div>
           </div>
         </div>
       </div>
+      <div class="my-hr"></div>
+      <div class="details">
+        <h3>訂單明細</h3>
+        <div class="my-hr" style="visibility: hidden;"></div>
+        <div class="item d-flex justify-content-between align-items-center">
+          <div class="container" style="padding: 0px;">
+            <div class="row no-gutters">
+              <div class="col-6 d-flex justify-content-start align-items-center">
+                <div class="item-photo mr-2">
+                  <img src="./img/捲餅.jpg" alt="" style="width: 4rem; height: 4rem; border-radius: 50%;">
+                </div>
+                <div class="item-data">
+                  <div class="item-name">Chicken momo</div>
+                  <div class="item-nmuber">#41551</div>
+                </div>
+              </div>
+              <div class="col-6 d-flex justify-content-end align-items-center">
+                <div class="item-quantiys d-flex justify-content-between">
+                  <div class="quantiys d-flex justify-content-around align-items-center">
+                    <div class="bnt">-</div>
+                    <div class="num-value ml-2 mr-2">
+                      <input type="number" style="width: 2rem;">
+                    </div>
+                    <div class="bnt">+</div>
+                  </div>
+                  <div class="price d-flex align-items-center pl-3">$10.50</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-hr"></div>
+        <div class="item d-flex justify-content-between align-items-center">
+          <div class="container" style="padding: 0px;">
+            <div class="row no-gutters">
+              <div class="col-6 d-flex justify-content-start align-items-center">
+                <div class="item-photo mr-2">
+                  <img src="./img/咖哩.jpg" alt="" style="width: 4rem; height: 4rem; border-radius: 50%;">
+                </div>
+                <div class="item-data">
+                  <div class="item-name">Chicken momo</div>
+                  <div class="item-nmuber">#41551</div>
+                </div>
+              </div>
+              <div class="col-6 d-flex justify-content-end align-items-center">
+                <div class="item-quantiys d-flex justify-content-between">
+                  <div class="quantiys d-flex justify-content-around align-items-center">
+                    <div class="bnt">-</div>
+                    <div class="num-value ml-2 mr-2">
+                      <input type="number" style="width: 2rem;">
+                    </div>
+                    <div class="bnt">+</div>
+                  </div>
+                  <div class="price d-flex align-items-center pl-3">$10.50</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-hr"></div>
+        <div class="item d-flex justify-content-between align-items-center">
+          <div class="container" style="padding: 0px;">
+            <div class="row no-gutters">
+              <div class="col-6 d-flex justify-content-start align-items-center">
+                <div class="item-photo mr-2">
+                  <img src="./img/甜點.jpg" alt="" style="width: 4rem; height: 4rem; border-radius: 50%;">
+                </div>
+                <div class="item-data">
+                  <div class="item-name">Chicken momo</div>
+                  <div class="item-nmuber">#41551</div>
+                </div>
+              </div>
+              <div class="col-6 d-flex justify-content-end align-items-center">
+                <div class="item-quantiys d-flex justify-content-between">
+                  <div class="quantiys d-flex justify-content-around align-items-center">
+                    <div class="bnt">-</div>
+                    <div class="num-value ml-2 mr-2">
+                      <input type="number" style="width: 2rem;">
+                    </div>
+                    <div class="bnt">+</div>
+                  </div>
+                  <div class="price d-flex align-items-center pl-3">$10.50</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-hr"></div>
+      </div>
       <div class="total">
-        <div class="to-num">
-          <span>數量:</span>
-          <div class="value" id="to-num"></div>
-        </div>
-        <div class="items-price">
-          <span>小計:</span>
-          <div class="value" id="items-price"></div>
-        </div>
-        <div class="shipping">
-          <span>運費:</span>
-          <div class="value" id="shipping"></div>
-        </div>
-        <div class="to-price">
-          <span>總計:</span>
-          <div class="value" id="to-price"></div>
+        <div class="container">
+          <div class="row no-gutters">
+            <div class="col-8"></div>
+            <div class="col-4">
+              <div class="to-num">
+                <span>數量:</span>
+                <div class="value" id="to-num"></div>
+              </div>
+              <div class="items-price">
+                <span>小計:</span>
+                <div class="value" id="items-price"></div>
+              </div>
+              <div class="shipping">
+                <span>運費:</span>
+                <div class="value" id="shipping"></div>
+              </div>
+              <div class="to-price">
+                <span>總計:</span>
+                <div class="value" id="to-price"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="opctions">
