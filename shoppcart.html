@@ -269,11 +269,11 @@
                   <div class="quantiys d-flex justify-content-around align-items-center">
                     <div class="minus">-</div>
                     <div class="num-value ml-2 mr-2">
-                      <input id="burrito-num" type="number" value="1" style="width: 2rem;"> 
+                      <input class="on-change" id="burrito-num" type="number" value="1" style="width: 2rem;"> 
                     </div>
                     <div class="plus">+</div>
                   </div>
-                  <div class="price d-flex align-items-center pl-3" id="burrito-price">$10.50</div>
+                  <div class="price d-flex align-items-center pl-3" >$<span id="burrito-price">10.50</span></div>
                 </div>
               </div>
             </div>
@@ -297,11 +297,12 @@
                   <div class="quantiys d-flex justify-content-around align-items-center">
                     <div class="minus">-</div>
                     <div class="num-value ml-2 mr-2">
-                      <input id="gali-num" type="number" value="1" style="width: 2rem;"  >
+                      <input class="on-change" id="gali-num" type="number" value="1" style="width: 2rem;"  >
                     </div>
                     <div class="plus">+</div>
                   </div>
-                  <div class="price d-flex align-items-center pl-3" id="gali-price">$10.50</div>
+                  <div class="price d-flex align-items-center pl-3">
+                    $<span id="gali-price">10.50</span></div>
                 </div>
               </div>
             </div>
@@ -325,11 +326,11 @@
                   <div class="quantiys d-flex justify-content-around align-items-center">
                     <div class="minus">-</div>
                     <div class="num-value ml-2 mr-2">
-                      <input id="sweet-num" type="number" value="1" style="width: 2rem;"  >
+                      <input class="on-change" id="sweet-num" type="number" value="1" style="width: 2rem;">
                     </div>
                     <div class="plus">+</div>
                   </div>
-                  <div class="price d-flex align-items-center pl-3 " id="sweet-price">$10.50</div>
+                  <div class="price d-flex align-items-center pl-3 " >$<span id="sweet-price" >10.50</span></div>
                 </div>
               </div>
             </div>
@@ -344,7 +345,7 @@
             <div class="col-2">
               <div class="to-num d-flex justify-content-between align-items-center">
                 <span>數量:</span>
-                <div class="value ml-3" id="to-num">1113</div>
+                <div class="value ml-3" id="total-items"></div>
               </div>
               <div class="items-price">
                 <span>小計:</span>
@@ -356,7 +357,7 @@
               </div>
               <div class="to-price">
                 <span>總計:</span>
-                <div class="value ml-3" id="to-price"></div>
+                <div class="value ml-3" id="total-price"></div>
               </div>
             </div>
           </div>
@@ -511,25 +512,140 @@
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
   <script>
-    var burritoPrice = document.querySelector('#burrito-price').innerHTML;
-    var galiPrice = document.querySelector('#gali-price').innerHTML;
-    var sweetPrice = document.querySelector('#sweet-price').innerHTML;
-    var burritoNum = document.querySelector('#burrito-num').value;
-    var galiNum = document.querySelector('#gali-num').value;
-    var sweetNum = document.querySelector('#sweet-num').value;
+    var burritoPrice = document.querySelector('#burrito-price');
+    var galiPrice = document.querySelector('#gali-price');
+    var sweetPrice = document.querySelector('#sweet-price');
+    var burritoPriceValue = burritoPrice.innerHTML;
+    var galiPriceValue = galiPrice.innerHTML;
+    var sweetPriceValue = sweetPrice.innerHTML;
+    var sumBurritoPrice = Number(burritoPrice.innerHTML);
+    var sumgaliPrice = Number(galiPrice.innerHTML);
+    var sumSweetPrice = Number(sweetPrice.innerHTML);
+
+    var burritoNum = document.querySelector('#burrito-num');
+    var galiNum = document.querySelector('#gali-num');
+    var sweetNum = document.querySelector('#sweet-num');
+
+    var burritoValue =  Number(burritoNum.value);
+    var galiValue = Number(galiNum.value);
+    var sweetValue = Number(sweetNum.value);
+
     var plus = document.querySelectorAll('.plus');
-    plus.forEach(item => {
-      
-    });
-    console.log(plus);
-    function plus(amount) {
+    var minus = document.querySelectorAll('.minus');
+    var onChange = document.querySelectorAll('.on-change');
+
+    
+    
+    function myPlus(amount) {
       amount += 1;
       return amount;
     }
-    function minus(amount) {
+    function myMinus(amount) {
       amount -= 1;
       return amount;
     }
+    function countPrice(price,amount){
+      var sum = price * amount;
+      return sum;
+    }
+    
+    onChange.forEach((item, index) => {
+      item.onchange = function(){
+        if(index == 0){
+          burritoValue = burritoNum.value;
+          console.log(burritoPriceValue);
+          sumBurritoPrice = countPrice(burritoPriceValue,burritoValue);
+          burritoPrice.innerHTML = sumBurritoPrice;
+        }else if(index == 1){
+          
+          galiValue = galiNum.value ;
+          console.log(galiPriceValue);
+          sumgaliPrice = countPrice(galiPriceValue,galiValue);
+          galiPrice.innerHTML = sumgaliPrice;
+        }else if(index == 2){
+          
+          sweetValue =  sweetNum.value ;
+          console.log(sweetPriceValue);
+          sumSweetPrice = countPrice(sweetPriceValue,sweetValue);
+          sweetPrice.innerHTML = sumSweetPrice;
+        }
+        totalCount();
+      }
+    });
+    plus.forEach((item, index) => {   
+      item.onclick = function(){
+        if(index == 0){
+          burritoValue =  myPlus(burritoValue);
+          console.log(burritoValue);
+          burritoNum.value = burritoValue;
+          console.log(burritoPriceValue);
+          sumBurritoPrice = countPrice(burritoPriceValue,burritoValue);
+          burritoPrice.innerHTML = sumBurritoPrice;
+        }else if(index == 1){
+          galiValue =  myPlus(galiValue);
+          console.log(galiValue);
+          galiNum.value = galiValue;
+          console.log(galiPriceValue);
+          sumgaliPrice = countPrice(galiPriceValue,galiValue);
+          galiPrice.innerHTML = sumgaliPrice;
+        }else if(index == 2){
+          sweetValue =  myPlus(sweetValue);
+          console.log(sweetValue);
+          sweetNum.value = sweetValue;
+          console.log(sweetPriceValue);
+          sumSweetPrice = countPrice(sweetPriceValue,sweetValue);
+          sweetPrice.innerHTML = sumSweetPrice;
+        }
+        totalCount();
+      }
+    });
+    minus.forEach((item, index) => {   
+      item.onclick = function(){
+        if(index == 0){
+          burritoValue =  myMinus(burritoValue);
+          console.log(burritoValue);
+          burritoNum.value = burritoValue;
+          console.log(burritoPriceValue);
+          sumBurritoPrice = countPrice(burritoPriceValue,burritoValue);
+          burritoPrice.innerHTML = sumBurritoPrice;
+        }else if(index == 1){
+          galiValue =  myMinus(galiValue);
+          console.log(galiValue);
+          galiNum.value = galiValue;
+          console.log(galiPriceValue);
+          sumgaliPrice = countPrice(galiPriceValue,galiValue);
+          galiPrice.innerHTML = sumgaliPrice;
+        }else if(index == 2){
+          sweetValue =  myMinus(sweetValue);
+          console.log(sweetValue);
+          sweetNum.value = sweetValue;
+          console.log(sweetPriceValue);
+          sumSweetPrice = countPrice(sweetPriceValue,sweetValue);
+          sweetPrice.innerHTML = sumSweetPrice;
+        }
+        totalCount();
+      }
+    });
+    var totalItems = document.querySelector('#total-items');
+    var itemsPrice = document.querySelector('#items-price');
+    var shipping = document.querySelector('#shipping');
+    var totalPrice = document.querySelector('#total-price');
+    var totalItemsValue = 0;
+    var shippingValue = 0;
+    var totalPriceValue = 0;
+    
+    function totalCount(){
+      console.log('QWE');
+      totalItemsValue = burritoValue + galiValue + sweetValue ;
+      totalItems.innerHTML = totalItemsValue;
+      console.log(burritoPriceValue);
+      itemsPriceValue = sumBurritoPrice + sumgaliPrice + sumSweetPrice;
+      itemsPrice.innerHTML = itemsPriceValue;
+      shippingValue = totalItemsValue * 5;
+      shipping.innerHTML = shippingValue;
+      totalPrice.innerHTML = itemsPriceValue + shippingValue;
+    }
+    
     
   </script>
 </body>
