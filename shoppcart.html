@@ -11,6 +11,18 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <title>Document</title>
   <style>
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -34,8 +46,9 @@
       padding: 5% 10%;
       transition: 0.1s;
     }
-    @media(max-width:1026px){
-      main{
+
+    @media(max-width:1026px) {
+      main {
         padding: 5% 0px;
       }
     }
@@ -70,7 +83,8 @@
       align-items: center;
       font-size: 1rem;
     }
-    .num{
+
+    .num {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -79,53 +93,61 @@
 
     .num1::before {
       content: '';
-      width: calc(calc(100% - 4rem) / 2) ;
+      width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       /* background-color: #e5e7eb; */
     }
+
     .num1::after {
       content: '';
-      width: calc(calc(100% - 4rem) / 2) ;
+      width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #6ee7b7;
     }
+
     .num2::before {
       content: '';
-      width: calc(calc(100% - 4rem) / 2) ;
+      width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #e5e7eb;
     }
+
     .num2::after {
       content: '';
-      width: calc(calc(100% - 4rem) / 2) ;
+      width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #e5e7eb;
     }
+
     .num3::before {
       content: '';
-      width: calc(calc(100% - 4rem) / 2) ;
+      width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #e5e7eb;
     }
+
     .num3::after {
       content: '';
-      width: calc(calc(100% - 4rem) / 2) ;
+      width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #e5e7eb;
     }
+
     .num4::before {
       content: '';
-      width: calc(calc(100% - 4rem) / 2) ;
+      width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #e5e7eb;
     }
+
     .num4::after {
       content: '';
-      width: calc(calc(100% - 4rem) / 2) ;
+      width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       /* background-color: #e5e7eb; */
     }
-    .my-hr{
+
+    .my-hr {
       width: 100%;
       height: 1px;
       margin: 2rem 0;
@@ -179,7 +201,7 @@
     </div>
   </nav>
 
-  <main >
+  <main>
     <div class="cart-container">
       <div class="title">
         <h1>購物車</h1>
@@ -245,13 +267,13 @@
               <div class="col-6 d-flex justify-content-end align-items-center">
                 <div class="item-quantiys d-flex justify-content-between">
                   <div class="quantiys d-flex justify-content-around align-items-center">
-                    <div class="bnt">-</div>
+                    <div class="minus">-</div>
                     <div class="num-value ml-2 mr-2">
-                      <input type="number" style="width: 2rem;">
+                      <input id="burrito-num" type="number" value="1" style="width: 2rem;"> 
                     </div>
-                    <div class="bnt">+</div>
+                    <div class="plus">+</div>
                   </div>
-                  <div class="price d-flex align-items-center pl-3">$10.50</div>
+                  <div class="price d-flex align-items-center pl-3" id="burrito-price">$10.50</div>
                 </div>
               </div>
             </div>
@@ -273,13 +295,13 @@
               <div class="col-6 d-flex justify-content-end align-items-center">
                 <div class="item-quantiys d-flex justify-content-between">
                   <div class="quantiys d-flex justify-content-around align-items-center">
-                    <div class="bnt">-</div>
+                    <div class="minus">-</div>
                     <div class="num-value ml-2 mr-2">
-                      <input type="number" style="width: 2rem;">
+                      <input id="gali-num" type="number" value="1" style="width: 2rem;"  >
                     </div>
-                    <div class="bnt">+</div>
+                    <div class="plus">+</div>
                   </div>
-                  <div class="price d-flex align-items-center pl-3">$10.50</div>
+                  <div class="price d-flex align-items-center pl-3" id="gali-price">$10.50</div>
                 </div>
               </div>
             </div>
@@ -301,13 +323,13 @@
               <div class="col-6 d-flex justify-content-end align-items-center">
                 <div class="item-quantiys d-flex justify-content-between">
                   <div class="quantiys d-flex justify-content-around align-items-center">
-                    <div class="bnt">-</div>
+                    <div class="minus">-</div>
                     <div class="num-value ml-2 mr-2">
-                      <input type="number" style="width: 2rem;">
+                      <input id="sweet-num" type="number" value="1" style="width: 2rem;"  >
                     </div>
-                    <div class="bnt">+</div>
+                    <div class="plus">+</div>
                   </div>
-                  <div class="price d-flex align-items-center pl-3">$10.50</div>
+                  <div class="price d-flex align-items-center pl-3 " id="sweet-price">$10.50</div>
                 </div>
               </div>
             </div>
@@ -316,31 +338,32 @@
         <div class="my-hr"></div>
       </div>
       <div class="total">
-        <div class="container">
+        <div class="container p-0">
           <div class="row no-gutters">
-            <div class="col-8"></div>
-            <div class="col-4">
-              <div class="to-num">
+            <div class="col-10"></div>
+            <div class="col-2">
+              <div class="to-num d-flex justify-content-between align-items-center">
                 <span>數量:</span>
-                <div class="value" id="to-num"></div>
+                <div class="value ml-3" id="to-num">1113</div>
               </div>
               <div class="items-price">
                 <span>小計:</span>
-                <div class="value" id="items-price"></div>
+                <div class="value ml-3" id="items-price"></div>
               </div>
               <div class="shipping">
                 <span>運費:</span>
-                <div class="value" id="shipping"></div>
+                <div class="value ml-3" id="shipping"></div>
               </div>
               <div class="to-price">
                 <span>總計:</span>
-                <div class="value" id="to-price"></div>
+                <div class="value ml-3" id="to-price"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="opctions">
+      <div class="my-hr"></div>
+      <div class="opctions d-flex justify-content-between align-items-center">
         <a href=""><i class="fas fa-arrow-left"></i><span>返回購物</span></a>
         <button class="btn btn-primary" type="submit">下一步</button>
       </div>
@@ -487,7 +510,28 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
-
+  <script>
+    var burritoPrice = document.querySelector('#burrito-price').innerHTML;
+    var galiPrice = document.querySelector('#gali-price').innerHTML;
+    var sweetPrice = document.querySelector('#sweet-price').innerHTML;
+    var burritoNum = document.querySelector('#burrito-num').value;
+    var galiNum = document.querySelector('#gali-num').value;
+    var sweetNum = document.querySelector('#sweet-num').value;
+    var plus = document.querySelectorAll('.plus');
+    plus.forEach(item => {
+      
+    });
+    console.log(plus);
+    function plus(amount) {
+      amount += 1;
+      return amount;
+    }
+    function minus(amount) {
+      amount -= 1;
+      return amount;
+    }
+    
+  </script>
 </body>
 
 </html>
