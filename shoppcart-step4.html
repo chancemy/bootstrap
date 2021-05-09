@@ -76,12 +76,13 @@
       width: 2rem;
       height: 2rem;
       margin: 0px 1rem;
-      background-color: #ffffff;
+      background-color: #13b981;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 1rem;
+      color: white;
     }
 
     .num {
@@ -90,10 +91,7 @@
       justify-content: center;
       align-items: center;
     }
-    .num1 .my-step-num{
-      background-color: #6ee7b7;
-  
-    }
+    
     .num1::before {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
@@ -112,35 +110,35 @@
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
-      background-color: #e5e7eb;
+      background-color: #6ee7b7;
     }
 
     .num2::after {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
-      background-color: #e5e7eb;
+      background-color: #6ee7b7;
     }
 
     .num3::before {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
-      background-color: #e5e7eb;
+      background-color: #6ee7b7
     }
 
     .num3::after {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
-      background-color: #e5e7eb;
+      background-color: #6ee7b7
     }
 
     .num4::before {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
-      background-color: #e5e7eb;
+      background-color: #6ee7b7;
     }
 
     .num4::after {
@@ -256,7 +254,7 @@
         </div>
       </div>
       <div class="my-hr"></div>
-      <div class="details">
+      <div class="details ">
         <h3>訂單明細</h3>
         <div class="my-hr" style="visibility: hidden;"></div>
         <div class="item d-flex justify-content-between align-items-center">
@@ -274,11 +272,8 @@
               <div class="col-6 d-flex justify-content-end align-items-center">
                 <div class="item-quantiys d-flex justify-content-between">
                   <div class="quantiys d-flex justify-content-around align-items-center">
-                    <div class="minus">-</div>
-                    <div class="num-value ml-2 mr-2">
-                      <input class="on-change" id="burrito-num" type="number" value="1" style="width: 2rem;"> 
-                    </div>
-                    <div class="plus">+</div>
+                    <span>x</span>
+                    <div class="final-totla-num">1</div>
                   </div>
                   <div class="price d-flex align-items-center ml-3 " >$<span id="burrito-price">10.50</span></div>
                 </div>
@@ -302,11 +297,8 @@
               <div class="col-6 d-flex justify-content-end align-items-center">
                 <div class="item-quantiys d-flex justify-content-between">
                   <div class="quantiys d-flex justify-content-around align-items-center">
-                    <div class="minus">-</div>
-                    <div class="num-value ml-2 mr-2">
-                      <input class="on-change" id="gali-num" type="number" value="1" style="width: 2rem;"  >
-                    </div>
-                    <div class="plus">+</div>
+                    <span>x</span>
+                    <div class="final-totla-num">1</div>
                   </div>
                   <div class="price d-flex align-items-center ml-3">
                     $<span id="gali-price">10.50</span></div>
@@ -331,11 +323,8 @@
               <div class="col-6 d-flex justify-content-end align-items-center">
                 <div class="item-quantiys d-flex justify-content-between">
                   <div class="quantiys d-flex justify-content-around align-items-center">
-                    <div class="minus">-</div>
-                    <div class="num-value ml-2 mr-2">
-                      <input class="on-change" id="sweet-num" type="number" value="1" style="width: 2rem;">
-                    </div>
-                    <div class="plus">+</div>
+                    <span>x</span>
+                    <div class="final-totla-num">1</div>
                   </div>
                   <div class="price d-flex align-items-center ml-3 " >$<span id="sweet-price" >10.50</span></div>
                 </div>
@@ -344,6 +333,37 @@
           </div>
         </div>
         <div class="my-hr"></div>
+      </div>
+      <div class="final-buyer-data">
+        <div class="container p-0">
+          <h3>寄送資料</h3>
+          <div class="row no-gutters">
+            <div class="col-1">
+              <span>姓名</span>
+            </div>
+            <div class="col-11">
+              <span>王小明</span>
+            </div>
+            <div class="col-1">
+              <span>電話</span>
+            </div>
+            <div class="col-11">
+              <span>012345678</span>
+            </div>
+            <div class="col-1">
+              <span>Email</span>
+            </div>
+            <div class="col-11">
+              <span>123@gmail.com</span>
+            </div>
+            <div class="col-1">
+              <span>地址</span>
+            </div>
+            <div class="col-11">
+              <span>台中市豐原區....</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="total">
         <div class="container p-0">
@@ -373,7 +393,7 @@
       <div class="my-hr"></div>
       <div class="opctions d-flex justify-content-between align-items-center">
         <a href=""><i class="fas fa-arrow-left"></i><span>返回購物</span></a>
-        <button class="btn btn-primary" type="submit">下一步</button>
+        <button class="btn btn-primary" type="submit">前往結帳</button>
       </div>
     </div>
   </main>
