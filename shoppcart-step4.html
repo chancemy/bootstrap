@@ -104,6 +104,7 @@
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #6ee7b7;
+      border-radius: 5px 0 0 5px;
     }
 
     .num2::before {
@@ -111,6 +112,7 @@
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #6ee7b7;
+      border-radius: 0 5px 5px 0;
     }
 
     .num2::after {
@@ -118,20 +120,23 @@
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #6ee7b7;
+      border-radius: 5px 0 0 5px;
     }
 
     .num3::before {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
-      background-color: #6ee7b7
+      background-color: #6ee7b7;
+      border-radius: 0 5px 5px 0;
     }
 
     .num3::after {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
-      background-color: #6ee7b7
+      background-color: #6ee7b7 ;
+      border-radius: 5px 0 0 5px;     
     }
 
     .num4::before {
@@ -139,6 +144,7 @@
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #6ee7b7;
+      border-radius: 0 5px 5px 0;
     }
 
     .num4::after {
@@ -392,8 +398,8 @@
       </div>
       <div class="my-hr"></div>
       <div class="opctions d-flex justify-content-between align-items-center">
-        <a href=""><i class="fas fa-arrow-left"></i><span>返回購物</span></a>
-        <button class="btn btn-primary" type="submit">前往結帳</button>
+        <a class="invisible" href=""><i class="fas fa-arrow-left"></i><span>返回購物</span></a>
+        <a href="./index.html"><button class="btn btn-primary" type="submit">反回首頁</button></a>
       </div>
     </div>
   </main>
@@ -538,147 +544,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
-  <script>
-    var burritoPrice = document.querySelector('#burrito-price');
-    var galiPrice = document.querySelector('#gali-price');
-    var sweetPrice = document.querySelector('#sweet-price');
-    var burritoPriceValue = burritoPrice.innerHTML;
-    var galiPriceValue = galiPrice.innerHTML;
-    var sweetPriceValue = sweetPrice.innerHTML;
-    var sumBurritoPrice = Number(burritoPrice.innerHTML);
-    var sumgaliPrice = Number(galiPrice.innerHTML);
-    var sumSweetPrice = Number(sweetPrice.innerHTML);
-
-    var burritoNum = document.querySelector('#burrito-num');
-    var galiNum = document.querySelector('#gali-num');
-    var sweetNum = document.querySelector('#sweet-num');
-
-    var burritoValue =  Number(burritoNum.value);
-    var galiValue = Number(galiNum.value);
-    var sweetValue = Number(sweetNum.value);
-
-    var plus = document.querySelectorAll('.plus');
-    var minus = document.querySelectorAll('.minus');
-    var onChange = document.querySelectorAll('.on-change');
-
-    totalCount();
-    
-    
-    
-    function myPlus(amount) {
-      amount += 1;
-      return amount;
-    }
-    function myMinus(amount) {
-      amount -= 1;
-      return amount;
-    }
-    function countPrice(price,amount){
-      var sum = price * amount;
-      return sum;
-    }
-    
-    onChange.forEach((item, index) => {
-      item.onchange = function(){
-        if(index == 0){
-          burritoValue = Number(burritoNum.value);
-          console.log(burritoValue + '捲餅數量');
-          sumBurritoPrice = countPrice(burritoPriceValue,burritoValue);
-          burritoPrice.innerHTML = sumBurritoPrice;
-        }else if(index == 1){
-          
-          galiValue = Number(galiNum.value) ;
-          console.log(galiPriceValue);
-          sumgaliPrice = countPrice(galiPriceValue,galiValue);
-          galiPrice.innerHTML = sumgaliPrice;
-        }else if(index == 2){
-          
-          sweetValue =  Number(sweetNum.value) ;
-          console.log(sweetPriceValue);
-          sumSweetPrice = countPrice(sweetPriceValue,sweetValue);
-          sweetPrice.innerHTML = sumSweetPrice;
-        }
-        totalCount();
-      }
-    });
-    plus.forEach((item, index) => {   
-      item.onclick = function(){
-        if(index == 0){
-          burritoValue =  myPlus(burritoValue);
-          console.log(burritoValue);
-          burritoNum.value = burritoValue;
-          console.log(burritoPriceValue);
-          sumBurritoPrice = countPrice(burritoPriceValue,burritoValue);
-          burritoPrice.innerHTML = sumBurritoPrice;
-        }else if(index == 1){
-          galiValue =  myPlus(galiValue);
-          console.log(galiValue);
-          galiNum.value = galiValue;
-          console.log(galiPriceValue);
-          sumgaliPrice = countPrice(galiPriceValue,galiValue);
-          galiPrice.innerHTML = sumgaliPrice;
-        }else if(index == 2){
-          sweetValue =  myPlus(sweetValue);
-          console.log(sweetValue);
-          sweetNum.value = sweetValue;
-          console.log(sweetPriceValue);
-          sumSweetPrice = countPrice(sweetPriceValue,sweetValue);
-          sweetPrice.innerHTML = sumSweetPrice;
-        }
-        totalCount();
-      }
-    });
-    minus.forEach((item, index) => {   
-      item.onclick = function(){
-        if(index == 0){
-          burritoValue =  myMinus(burritoValue);
-          console.log(burritoValue);
-          burritoNum.value = burritoValue;
-          console.log(burritoPriceValue);
-          sumBurritoPrice = countPrice(burritoPriceValue,burritoValue);
-          burritoPrice.innerHTML = sumBurritoPrice;
-        }else if(index == 1){
-          galiValue =  myMinus(galiValue);
-          console.log(galiValue);
-          galiNum.value = galiValue;
-          console.log(galiPriceValue);
-          sumgaliPrice = countPrice(galiPriceValue,galiValue);
-          galiPrice.innerHTML = sumgaliPrice;
-        }else if(index == 2){
-          sweetValue =  myMinus(sweetValue);
-          console.log(sweetValue);
-          sweetNum.value = sweetValue;
-          console.log(sweetPriceValue);
-          sumSweetPrice = countPrice(sweetPriceValue,sweetValue);
-          sweetPrice.innerHTML = sumSweetPrice;
-        }
-        totalCount();
-      }
-    });
-    
-    
-    function totalCount(){
-      var totalItems = document.querySelector('#total-items');
-      var itemsPrice = document.querySelector('#items-price');
-      var shipping = document.querySelector('#shipping');
-      var totalPrice = document.querySelector('#total-price');
-      var totalItemsValue = 0;
-      var shippingValue = 0;
-      var totalPriceValue = 0;
-
-      console.log('QWE');
-      totalItemsValue = burritoValue + galiValue + sweetValue ;
-      totalItems.innerHTML = totalItemsValue;
-      console.log(burritoPriceValue);
-      itemsPriceValue = sumBurritoPrice + sumgaliPrice + sumSweetPrice;
-      itemsPrice.innerHTML = itemsPriceValue;
-      shippingValue = totalItemsValue * 5;
-      shipping.innerHTML = shippingValue;
-      totalPrice.innerHTML = itemsPriceValue + shippingValue;
-    }
-    
-    
-  </script>
+  
 </body>
 
 </html>

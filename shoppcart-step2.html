@@ -103,12 +103,14 @@
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       /* background-color: #e5e7eb; */
+      border-radius: 0 5px 5px 0;
     }
 
     .num1::after {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
+      border-radius: 5px 0 0 5px;
       background-color: #6ee7b7;
     }
 
@@ -117,12 +119,14 @@
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #6ee7b7;
+      border-radius: 0 5px 5px 0;
     }
 
     .num2::after {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
+      border-radius: 5px 0 0 5px;
       background-color: #6ee7b7;
     }
 
@@ -131,12 +135,14 @@
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #e5e7eb;
+      border-radius: 0 5px 5px 0;
     }
 
     .num3::after {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
+      border-radius: 5px 0 0 5px;
       background-color: #e5e7eb;
     }
 
@@ -145,12 +151,14 @@
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
       background-color: #e5e7eb;
+      border-radius: 0 5px 5px 0;
     }
 
     .num4::after {
       content: '';
       width: calc(calc(100% - 4rem) / 2);
       height: 0.5rem;
+      border-radius: 5px 0 0 5px;
       /* background-color: #e5e7eb; */
     }
 
@@ -267,29 +275,28 @@
             <div class="my-hr invisible"></div>
             <div class="container">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                <label class="form-check-label" for="exampleRadios1">
+                <input class="form-check-input" type="radio" name="payRadios" id="payRadios1" value="option1" checked>
+                <label class="form-check-label" for="payRadios1">
                   信用卡付款
                 </label>
               </div>
               <div class="my-hr"></div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                <label class="form-check-label" for="exampleRadios2">
+                <input class="form-check-input" type="radio" name="payRadios" id="payRadios2" value="option2">
+                <label class="form-check-label" for="payRadios2">
                   網路 ATM
                 </label>
               </div>
               <div class="my-hr"></div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
-                <label class="form-check-label" for="exampleRadios3">
+                <input class="form-check-input" type="radio" name="payRadios" id="payRadios3" value="option3" >
+                <label class="form-check-label" for="payRadios3">
                   超商代碼
                 </label>
               </div>
             </div>
           </div>
           <div class="my-hr"></div>
-          <div class="col-12"></div>
         </div>
       </div>
       <div class="container">
@@ -299,15 +306,15 @@
             <div class="my-hr invisible"></div>
             <div class="container">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                <label class="form-check-label" for="exampleRadios1">
+                <input class="form-check-input" type="radio" name="shipRadios" id="shipRadios1" value="option1" checked>
+                <label class="form-check-label" for="shipRadios1">
                   黑貓宅配
                 </label>
               </div>
               <div class="my-hr"></div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                <label class="form-check-label" for="exampleRadios2">
+                <input class="form-check-input" type="radio" name="shipRadios" id="shipRadios2" value="option2">
+                <label class="form-check-label" for="shipRadios2">
                   超商店到店
                 </label>
               </div>
@@ -433,8 +440,12 @@
       </div>
       <div class="my-hr"></div>
       <div class="opctions d-flex justify-content-between align-items-center">
-        <a href=""><i class="fas fa-arrow-left"></i><span>返回購物</span></a>
-        <button class="btn btn-primary" type="submit">下一步</button>
+        <a href="./shoppcart-step1.html">
+          <button class="btn btn-primary" type="submit">上一步</button>
+        </a>
+        <a href="./shoppcart-step3.html">
+          <button class="btn btn-primary" type="submit">下一步</button>
+        </a>
       </div>
     </div>
   </main>
