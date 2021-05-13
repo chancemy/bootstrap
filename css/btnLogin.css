@@ -1,7 +1,11 @@
 nav .my-btn {
   background-color: white;
+  height: 100%;
   margin-left: 16px;
   padding: 8px 16px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 nav .my-btn:hover {
