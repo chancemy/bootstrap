@@ -1,6 +1,7 @@
 nav .my-btn {
   background-color: white;
-  margin: 0px 10px;
+  margin-left: 16px;
+  padding: 8px 16px;
 }
 
 nav .my-btn:hover {
