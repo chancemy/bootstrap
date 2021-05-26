@@ -681,7 +681,11 @@
       console.log(burritoPriceValue);
       itemsPriceValue = sumBurritoPrice + sumgaliPrice + sumSweetPrice;
       itemsPrice.innerHTML = itemsPriceValue;
-      shippingValue = totalItemsValue * 5;
+      if(itemsPriceValue >= 1000){
+        shippingValue = 0 ;
+      }else{
+        shippingValue = 60;
+      }
       shipping.innerHTML = shippingValue;
       totalPrice.innerHTML = itemsPriceValue + shippingValue;
     }

@@ -2,6 +2,10 @@
     max-width: 1280px;       // 最後內容寬會是 980px
     padding: 0px;
 }
+.container.custom-container-width-b {
+    max-width: 1536px;       // 最後內容寬會是 980px
+    padding: 0px;
+}
 *{
     box-sizing: border-box;
 }
@@ -119,7 +123,6 @@ textarea {
     color:  #e5e7eb ;
     z-index: 2;
 }
-
 .B{
     .container{
         .row{
