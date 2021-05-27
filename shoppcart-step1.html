@@ -569,6 +569,7 @@
     var plus = document.querySelectorAll('.plus');
     var minus = document.querySelectorAll('.minus');
     var onChange = document.querySelectorAll('.on-change');
+    var itemQty = 0 ;
 
     totalCount();
 
@@ -589,52 +590,57 @@
 
     onChange.forEach((item, index) => {
       item.onchange = function () {
-        if (index == 0) {
-          burritoValue = Number(burritoNum.value);
-          console.log(burritoValue + '捲餅數量');
-          sumBurritoPrice = countPrice(burritoPriceValue, burritoValue);
-          burritoPrice.innerHTML = sumBurritoPrice;
-        } else if (index == 1) {
+        itemQty = item.value;
+        console.log(itemQty);
+        
+        // if (index == 0) {
+        //   burritoValue = Number(burritoNum.value);
+        //   console.log(burritoValue + '捲餅數量');
+        //   sumBurritoPrice = countPrice(burritoPriceValue, burritoValue);
+        //   burritoPrice.innerHTML = sumBurritoPrice;
+        // } else if (index == 1) {
 
-          galiValue = Number(galiNum.value);
-          console.log(galiPriceValue);
-          sumgaliPrice = countPrice(galiPriceValue, galiValue);
-          galiPrice.innerHTML = sumgaliPrice;
-        } else if (index == 2) {
+        //   galiValue = Number(galiNum.value);
+        //   console.log(galiPriceValue);
+        //   sumgaliPrice = countPrice(galiPriceValue, galiValue);
+        //   galiPrice.innerHTML = sumgaliPrice;
+        // } else if (index == 2) {
 
-          sweetValue = Number(sweetNum.value);
-          console.log(sweetPriceValue);
-          sumSweetPrice = countPrice(sweetPriceValue, sweetValue);
-          sweetPrice.innerHTML = sumSweetPrice;
-        }
-        totalCount();
+        //   sweetValue = Number(sweetNum.value);
+        //   console.log(sweetPriceValue);
+        //   sumSweetPrice = countPrice(sweetPriceValue, sweetValue);
+        //   sweetPrice.innerHTML = sumSweetPrice;
+        // }
+        // totalCount();
       }
     });
     plus.forEach((item, index) => {
       item.onclick = function () {
-        if (index == 0) {
-          burritoValue = myPlus(burritoValue);
-          console.log(burritoValue);
-          burritoNum.value = burritoValue;
-          console.log(burritoPriceValue);
-          sumBurritoPrice = countPrice(burritoPriceValue, burritoValue);
-          burritoPrice.innerHTML = sumBurritoPrice;
-        } else if (index == 1) {
-          galiValue = myPlus(galiValue);
-          console.log(galiValue);
-          galiNum.value = galiValue;
-          console.log(galiPriceValue);
-          sumgaliPrice = countPrice(galiPriceValue, galiValue);
-          galiPrice.innerHTML = sumgaliPrice;
-        } else if (index == 2) {
-          sweetValue = myPlus(sweetValue);
-          console.log(sweetValue);
-          sweetNum.value = sweetValue;
-          console.log(sweetPriceValue);
-          sumSweetPrice = countPrice(sweetPriceValue, sweetValue);
-          sweetPrice.innerHTML = sumSweetPrice;
-        }
-        totalCount();
+        console.log(item.innerHTML);
+        itemQty = onChange.value;
+        // if (index == 0) {
+        //   burritoValue = myPlus(burritoValue);
+        //   console.log(burritoValue);
+        //   burritoNum.value = burritoValue;
+        //   console.log(burritoPriceValue);
+        //   sumBurritoPrice = countPrice(burritoPriceValue, burritoValue);
+        //   burritoPrice.innerHTML = sumBurritoPrice;
+        // } else if (index == 1) {
+        //   galiValue = myPlus(galiValue);
+        //   console.log(galiValue);
+        //   galiNum.value = galiValue;
+        //   console.log(galiPriceValue);
+        //   sumgaliPrice = countPrice(galiPriceValue, galiValue);
+        //   galiPrice.innerHTML = sumgaliPrice;
+        // } else if (index == 2) {
+        //   sweetValue = myPlus(sweetValue);
+        //   console.log(sweetValue);
+        //   sweetNum.value = sweetValue;
+        //   console.log(sweetPriceValue);
+        //   sumSweetPrice = countPrice(sweetPriceValue, sweetValue);
+        //   sweetPrice.innerHTML = sumSweetPrice;
+        // }
+        // totalCount();
       }
     });
     minus.forEach((item, index) => {
@@ -661,33 +667,34 @@
           sumSweetPrice = countPrice(sweetPriceValue, sweetValue);
           sweetPrice.innerHTML = sumSweetPrice;
         }
-        totalCount();
+        // totalCount();
       }
     });
 
 
     function totalCount() {
-      var totalItems = document.querySelector('#total-items');
-      var itemsPrice = document.querySelector('#items-price');
-      var shipping = document.querySelector('#shipping');
-      var totalPrice = document.querySelector('#total-price');
-      var totalItemsValue = 0;
-      var shippingValue = 0;
-      var totalPriceValue = 0;
+      
+      // var totalItems = document.querySelector('#total-items');
+      // var itemsPrice = document.querySelector('#items-price');
+      // var shipping = document.querySelector('#shipping');
+      // var totalPrice = document.querySelector('#total-price');
+      // var totalItemsValue = 0;
+      // var shippingValue = 0;
+      // var totalPriceValue = 0;
 
-      console.log('QWE');
-      totalItemsValue = burritoValue + galiValue + sweetValue;
-      totalItems.innerHTML = totalItemsValue;
-      console.log(burritoPriceValue);
-      itemsPriceValue = sumBurritoPrice + sumgaliPrice + sumSweetPrice;
-      itemsPrice.innerHTML = itemsPriceValue;
-      if(itemsPriceValue >= 1000){
-        shippingValue = 0 ;
-      }else{
-        shippingValue = 60;
-      }
-      shipping.innerHTML = shippingValue;
-      totalPrice.innerHTML = itemsPriceValue + shippingValue;
+      // console.log('QWE');
+      // totalItemsValue = burritoValue + galiValue + sweetValue;
+      // totalItems.innerHTML = totalItemsValue;
+      // console.log(burritoPriceValue);
+      // itemsPriceValue = sumBurritoPrice + sumgaliPrice + sumSweetPrice;
+      // itemsPrice.innerHTML = itemsPriceValue;
+      // if(itemsPriceValue >= 1000){
+      //   shippingValue = 0 ;
+      // }else{
+      //   shippingValue = 60;
+      // }
+      // shipping.innerHTML = shippingValue;
+      // totalPrice.innerHTML = itemsPriceValue + shippingValue;
     }
 
 
