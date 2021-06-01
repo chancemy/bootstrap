@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="./css/bootstrao.css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/btnLogin.css">
@@ -295,7 +295,7 @@
                     </div>
                     <div class="plus">+</div>
                   </div>
-                  <div class="price d-flex align-items-center ml-3 ">$<span id="burrito-price">10.50</span></div>
+                  <div class="d-flex align-items-center ml-3 ">$<span class="price">20</span></div>
                 </div>
               </div>
             </div>
@@ -323,8 +323,8 @@
                     </div>
                     <div class="plus">+</div>
                   </div>
-                  <div class="price d-flex align-items-center ml-3">
-                    $<span id="gali-price">10.50</span></div>
+                  <div class="d-flex align-items-center ml-3">
+                    $<span class="price">10.50</span></div>
                 </div>
               </div>
             </div>
@@ -352,7 +352,7 @@
                     </div>
                     <div class="plus">+</div>
                   </div>
-                  <div class="price d-flex align-items-center ml-3 ">$<span id="sweet-price">10.50</span></div>
+                  <div class="d-flex align-items-center ml-3 ">$<span class="price">10.50</span></div>
                 </div>
               </div>
             </div>
@@ -548,139 +548,93 @@
     })
   </script>
   <script>
-    var burritoPrice = document.querySelector('#burrito-price');
-    var galiPrice = document.querySelector('#gali-price');
-    var sweetPrice = document.querySelector('#sweet-price');
-    var burritoPriceValue = burritoPrice.innerHTML;
-    var galiPriceValue = galiPrice.innerHTML;
-    var sweetPriceValue = sweetPrice.innerHTML;
-    var sumBurritoPrice = Number(burritoPrice.innerHTML);
-    var sumgaliPrice = Number(galiPrice.innerHTML);
-    var sumSweetPrice = Number(sweetPrice.innerHTML);
-
-    var burritoNum = document.querySelector('#burrito-num');
-    var galiNum = document.querySelector('#gali-num');
-    var sweetNum = document.querySelector('#sweet-num');
-
-    var burritoValue = Number(burritoNum.value);
-    var galiValue = Number(galiNum.value);
-    var sweetValue = Number(sweetNum.value);
 
     var plus = document.querySelectorAll('.plus');
     var minus = document.querySelectorAll('.minus');
     var onChange = document.querySelectorAll('.on-change');
     var itemQty = 0 ;
-
+    var price = 0 ;
+    var elesPrice = document.querySelectorAll('.price');
+    var initPrice = [] ;
+    console.log(elesPrice);
+    elesPrice.forEach(function(ele, index){
+      console.log(ele);
+      initPrice[index] = elesPrice[index].innerHTML;
+    })
     totalCount();
-
-
-
-    function myPlus(amount) {
-      amount += 1;
-      return amount;
-    }
-    function myMinus(amount) {
-      amount -= 1;
-      return amount;
-    }
-    function countPrice(price, amount) {
-      var sum = price * amount;
-      return sum;
-    }
 
     onChange.forEach((item, index) => {
       item.onchange = function () {
-        itemQty = item.value;
-        console.log(itemQty);
-        
-        // if (index == 0) {
-        //   burritoValue = Number(burritoNum.value);
-        //   console.log(burritoValue + '捲餅數量');
-        //   sumBurritoPrice = countPrice(burritoPriceValue, burritoValue);
-        //   burritoPrice.innerHTML = sumBurritoPrice;
-        // } else if (index == 1) {
-
-        //   galiValue = Number(galiNum.value);
-        //   console.log(galiPriceValue);
-        //   sumgaliPrice = countPrice(galiPriceValue, galiValue);
-        //   galiPrice.innerHTML = sumgaliPrice;
-        // } else if (index == 2) {
-
-        //   sweetValue = Number(sweetNum.value);
-        //   console.log(sweetPriceValue);
-        //   sumSweetPrice = countPrice(sweetPriceValue, sweetValue);
-        //   sweetPrice.innerHTML = sumSweetPrice;
-        // }
-        // totalCount();
+        itemQty = Number(item.value);
+        itemQty = check(itemQty);
+        onChange[index].value = itemQty;
+        elesPrice[index].innerHTML = itemQty * initPrice[index];
+        totalCount();
       }
     });
     plus.forEach((item, index) => {
       item.onclick = function () {
-        console.log(item.innerHTML);
-        itemQty = onChange.value;
-        // if (index == 0) {
-        //   burritoValue = myPlus(burritoValue);
-        //   console.log(burritoValue);
-        //   burritoNum.value = burritoValue;
-        //   console.log(burritoPriceValue);
-        //   sumBurritoPrice = countPrice(burritoPriceValue, burritoValue);
-        //   burritoPrice.innerHTML = sumBurritoPrice;
-        // } else if (index == 1) {
-        //   galiValue = myPlus(galiValue);
-        //   console.log(galiValue);
-        //   galiNum.value = galiValue;
-        //   console.log(galiPriceValue);
-        //   sumgaliPrice = countPrice(galiPriceValue, galiValue);
-        //   galiPrice.innerHTML = sumgaliPrice;
-        // } else if (index == 2) {
-        //   sweetValue = myPlus(sweetValue);
-        //   console.log(sweetValue);
-        //   sweetNum.value = sweetValue;
-        //   console.log(sweetPriceValue);
-        //   sumSweetPrice = countPrice(sweetPriceValue, sweetValue);
-        //   sweetPrice.innerHTML = sumSweetPrice;
-        // }
-        // totalCount();
+        // console.log(item.innerHTML);
+        itemQty = Number(onChange[index].value);
+        itemQty += 1 ;
+        console.log(itemQty);
+        onChange[index].value = itemQty;
+        elesPrice[index].innerHTML = itemQty * initPrice[index];
+        totalCount();
       }
+      
     });
     minus.forEach((item, index) => {
       item.onclick = function () {
-        if (index == 0) {
-          burritoValue = myMinus(burritoValue);
-          console.log(burritoValue);
-          burritoNum.value = burritoValue;
-          console.log(burritoPriceValue);
-          sumBurritoPrice = countPrice(burritoPriceValue, burritoValue);
-          burritoPrice.innerHTML = sumBurritoPrice;
-        } else if (index == 1) {
-          galiValue = myMinus(galiValue);
-          console.log(galiValue);
-          galiNum.value = galiValue;
-          console.log(galiPriceValue);
-          sumgaliPrice = countPrice(galiPriceValue, galiValue);
-          galiPrice.innerHTML = sumgaliPrice;
-        } else if (index == 2) {
-          sweetValue = myMinus(sweetValue);
-          console.log(sweetValue);
-          sweetNum.value = sweetValue;
-          console.log(sweetPriceValue);
-          sumSweetPrice = countPrice(sweetPriceValue, sweetValue);
-          sweetPrice.innerHTML = sumSweetPrice;
-        }
-        // totalCount();
+        itemQty = Number(onChange[index].value);
+        itemQty -= 1 ;
+        itemQty = check(itemQty);
+        console.log(itemQty);
+        onChange[index].value = itemQty;
+        elesPrice[index].innerHTML = itemQty * initPrice[index];
+        totalCount();
       }
     });
+    function check(itemQty){
+      if(itemQty < 1){
+          itemQty = 1
+          console.log(itemQty+'有檢察');
+        }
+        return itemQty;
+    }
 
+    function isShipping(shippingValue){
+      if(shippingValue >= 500){
+        return 0;
+      }else{
+        return 60;
+      }
+    }
 
     function totalCount() {
-      
-      // var totalItems = document.querySelector('#total-items');
-      // var itemsPrice = document.querySelector('#items-price');
-      // var shipping = document.querySelector('#shipping');
-      // var totalPrice = document.querySelector('#total-price');
-      // var totalItemsValue = 0;
-      // var shippingValue = 0;
-      // var totalPriceValue = 0;
+      var totalItems = document.querySelector('#total-items');
+      var itemsPrice = document.querySelector('#items-price');
+      var shipping = document.querySelector('#shipping');
+      var totalPrice = document.querySelector('#total-price');
+      var totalItemsValue = 0;
+      var itemPriceValue = 0;
+      var shippingValue = 0;
+      var totalPriceValue = 0;
+      onChange.forEach(ele => {
+        itemQty = Number(ele.value);
+        totalItemsValue += itemQty ;
+        totalItems.innerHTML = totalItemsValue;
+        console.log('總數');
+      });
+      elesPrice.forEach(ele => {
+        price = Number(ele.innerHTML);
+        itemPriceValue += price ;
+        itemsPrice.innerHTML = itemPriceValue;
+        console.log('總計');
+      });
+      shippingValue = isShipping(itemPriceValue);
+      shipping.innerHTML = shippingValue;
+      totalPrice.innerHTML = itemPriceValue + shippingValue ;
 
       // console.log('QWE');
       // totalItemsValue = burritoValue + galiValue + sweetValue;
